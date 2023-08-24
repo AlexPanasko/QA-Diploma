@@ -9,12 +9,15 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class SQLHelper {
+    private static final String url = System.getProperty("datasource.url");
+    private static final String user = System.getProperty("datasource.user");
+    private static final String password = System.getProperty("datasource.password");
     private static final QueryRunner runner = new QueryRunner();
     private SQLHelper() {
     }
 
     private static Connection getConn() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass");
+        return DriverManager.getConnection(url, user, password);
     }
 
     @SneakyThrows

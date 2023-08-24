@@ -30,6 +30,11 @@ public class DataHelper {
         return new CardInfo("4444 4444 4444 4442", "DECLINED");
     }
 
+    public static CardInfo getUnknownCard() {
+
+        return new CardInfo("4444 4444 4444 4444", "");
+    }
+
     public static String getValidMonth() {
         return LocalDate.now().format(DateTimeFormatter.ofPattern("MM"));
     }
