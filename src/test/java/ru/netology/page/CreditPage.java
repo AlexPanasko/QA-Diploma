@@ -22,9 +22,18 @@ public class CreditPage {
 
     private final SelenideElement successNotification = $(".notification_status_ok");
     private final SelenideElement errorNotification = $(".notification_status_error");
-    private final SelenideElement emptyFieldNotification = $x(".//span[text()='Поле обязательно для заполнения']");
-    private final SelenideElement invalidFormatNotification = $x(".//span[text()='Неверный формат']");
+    private final SelenideElement emptyCardNumberNotification = $x(".//span[contains(text(), 'Номер карты')]/..//span[text()='Поле обязательно для заполнения']");
+    private final SelenideElement emptyMonthNotification = $x(".//span[contains(text(), 'Месяц')]/..//span[text()='Поле обязательно для заполнения']");
+    private final SelenideElement emptyYearNotification = $x(".//span[contains(text(), 'Год')]/..//span[text()='Поле обязательно для заполнения']");
+    private final SelenideElement emptyNameNotification = $x(".//span[contains(text(), 'Владелец')]/..//span[text()='Поле обязательно для заполнения']");
+    private final SelenideElement emptyCodeNotification = $x(".//span[contains(text(), 'CVC/CVV')]/..//span[text()='Поле обязательно для заполнения']");
+    private final SelenideElement invalidFormatCardNumberNotification = $x(".//span[contains(text(), 'Номер карты')]/..//span[text()='Неверный формат']");
+    private final SelenideElement invalidFormatMonthNotification = $x(".//span[contains(text(), 'Месяц')]/..//span[text()='Неверный формат']");
+    private final SelenideElement invalidFormatYearNotification = $x(".//span[contains(text(), 'Год')]/..//span[text()='Неверный формат']");
+    private final SelenideElement invalidFormatNameNotification = $x(".//span[contains(text(), 'Владелец')]/..//span[text()='Неверный формат']");
+    private final SelenideElement invalidFormatCodeNotification = $x(".//span[contains(text(), 'CVC/CVV')]/..//span[text()='Неверный формат']");
     private final SelenideElement invalidValidityPeriodNotification = $x(".//span[text()='Неверно указан срок действия карты']");
+    private final SelenideElement expiredValidityPeriodNotification = $x(".//span[text()='Истёк срок действия карты']");
 
     public CreditPage() {
         buyCreditButton.click();
@@ -58,15 +67,51 @@ public class CreditPage {
         errorNotification.shouldBe(visible, Duration.ofSeconds(15));
     }
 
-    public void verifyEmptyFieldVisibility() {
-        emptyFieldNotification.shouldBe(visible);
+    public void verifyEmptyCardNumberVisibility() {
+        emptyCardNumberNotification.shouldBe(visible);
     }
 
-    public void verifyInvalidFormatVisibility() {
-        invalidFormatNotification.shouldBe(visible);
+    public void verifyEmptyMonthVisibility() {
+        emptyMonthNotification.shouldBe(visible);
+    }
+
+    public void verifyEmptyYearVisibility() {
+        emptyYearNotification.shouldBe(visible);
+    }
+
+    public void verifyEmptyNameVisibility() {
+        emptyNameNotification.shouldBe(visible);
+    }
+
+    public void verifyEmptyCodeVisibility() {
+        emptyCodeNotification.shouldBe(visible);
+    }
+
+    public void verifyInvalidFormatCardNumberVisibility() {
+        invalidFormatCardNumberNotification.shouldBe(visible);
+    }
+
+    public void verifyInvalidFormatMonthVisibility() {
+        invalidFormatMonthNotification.shouldBe(visible);
+    }
+
+    public void verifyInvalidFormatYearVisibility() {
+        invalidFormatYearNotification.shouldBe(visible);
+    }
+
+    public void verifyInvalidFormatNameVisibility() {
+        invalidFormatNameNotification.shouldBe(visible);
+    }
+
+    public void verifyInvalidFormatCodeVisibility() {
+        invalidFormatCodeNotification.shouldBe(visible);
     }
 
     public void verifyInvalidValidityPeriodVisibility() {
         invalidValidityPeriodNotification.shouldBe(visible);
+    }
+
+    public void verifyExpiredValidityPeriodVisibility() {
+        expiredValidityPeriodNotification.shouldBe(visible);
     }
 }
