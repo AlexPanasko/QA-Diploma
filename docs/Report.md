@@ -16,14 +16,16 @@
 
 #### При подключении к СУБД MySQL:
 
-![Alt text](<Allure Report Mysql.png>)
+![Allure Report Mysql](https://github.com/AlexPanasko/QA-Diploma/assets/125549725/173d94de-d6bf-4a8e-934a-892060e15ebc)
+
 
 * 47 тестов - успешно пройдены (63.51%)
 * 27 тестов - не прошли (36.49%)
 
 #### При подключении к СУБД PostgreSQL
 
-![Alt text](<Allure Report Postgresql.png>)
+![Allure Report Postgresql](https://github.com/AlexPanasko/QA-Diploma/assets/125549725/76293b16-5326-48ab-87c1-06dff1622bc0)
+
 
 * 47 тестов - успешно пройдены (63.51%)
 * 27 тестов - не прошли (36.49%)
